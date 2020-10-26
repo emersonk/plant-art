@@ -7,7 +7,7 @@ float inByte = 0;
  
 void setup() {
   printArray(Serial.list());
-  String whichPort = "/dev/ttyUSB0";
+  String whichPort = Serial.list()[0];
   myPort = new Serial(this, whichPort, 9600); 
   myPort.bufferUntil('\n');
   size(300, 300);
