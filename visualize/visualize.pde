@@ -18,7 +18,7 @@ void setup() {
  
 void draw(){
   
-  line(X, height/2, X*2, height/2 - inByte*3);
+  line(X, height/2, X, height/2 - inByte);
  
   // at the edge of the screen, go back to the beginning:
   if(X >= width){
