@@ -11,13 +11,16 @@ int        rayon   = 10;
 
 
 void setup() {
-  String whichPort = "/dev/ttyUSB0";
+  String whichPort = Serial.list()[0];
   myPort = new Serial(this, whichPort, 9600); 
   myPort.bufferUntil('\n');
   delay(3000); // we have to delay for a bit because the first values it gets are garbage for some reason
-
-  // your setup code goes here
- size(600,600);
+  
+  // Set up background colour
+  background(255, 204, 0);
+  // Size of window
+  size(1000,1000);
+  
   tabPoint = new PVector[nbPoint];
   float angle = TWO_PI/(nbPoint);
   for(int division=0;division<nbPoint;division++)
@@ -29,12 +32,14 @@ void setup() {
 }
  
 void draw(){
+    if(mousePressed){
+    saveFrame();
+  }
   
-  // your draw code goes here
   PVector move = new PVector();
   // background(255);
   noFill();
-  stroke(0);
+  stroke(255, 255, 25);
   strokeWeight(1);
   translate(width/2,height/2);
   beginShape();

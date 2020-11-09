@@ -10,19 +10,19 @@ void setup() {
   String whichPort = Serial.list()[0];
   myPort = new Serial(this, whichPort, 9600); 
   myPort.bufferUntil('\n');
-  size(300, 300);
-  background(100);
+  
+  size(1000,1000);
+  background(255, 204, 0);
   stroke(34, 255, 34);
 }
  
 void draw(){
   
-  line(X, height, X, height - inByte);
+  line(X, height/2, X*2, height/2 - inByte*3);
  
   // at the edge of the screen, go back to the beginning:
   if(X >= width){
   X = 0;
-  background(100);
   }else{
   X++;
   }
