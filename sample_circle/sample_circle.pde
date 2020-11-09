@@ -33,13 +33,13 @@ void setup() {
  
 void draw(){
     if(mousePressed){
-    saveFrame();
+    saveFrame("plant-######.png");
   }
   
   PVector move = new PVector();
   // background(255);
   noFill();
-  stroke(255, 255, 25);
+  stroke(0, 0, 0);
   strokeWeight(1);
   translate(width/2,height/2);
   beginShape();
